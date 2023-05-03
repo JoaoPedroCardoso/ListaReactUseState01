@@ -13,6 +13,7 @@ export default function AdicionaParagrafo() {
         paragrafos.push(novoParagrafo);
         setParagrafos(paragrafos);
         setNovoParagrafo("");
+        document.getElementById("textInput").value='';
     }
 
     return(
@@ -20,7 +21,7 @@ export default function AdicionaParagrafo() {
             <p>Parágrafo 01 (Interface)</p>
             <p>Parágrafo 02 (Interface)</p>
             {paragrafos.map(paragrafo => <p>{paragrafo}</p>)}
-            <input type="text" onChange={e => criaParagrafo(e.target.value)}/>
+            <input id="textInput" type="text" onChange={e => criaParagrafo(e.target.value)}/>
             <button onClick={() => adicionaParagrafo()}>Adicionar Parágrafo</button>
             <hr/>
             <Link to="/">retornar a lista de exercicios</Link>
